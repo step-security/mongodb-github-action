@@ -19,9 +19,7 @@
   "homepage": "https://github.com/step-security/mongodb-github-action",
   "keywords": [
     "github",
-    "github-action",
-    "supercharge",
-    "superchargejs"
+    "github-action"
   ],
   "license": "MIT",
   "repository": {
