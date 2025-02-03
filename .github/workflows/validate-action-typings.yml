@@ -16,4 +16,4 @@ jobs:
           egress-policy: audit
 
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - uses: krzema12/github-actions-typing@d97e69a656cfb72a621da91005dd17616bc8b69e # v1.0.5
+      - uses: krzema12/github-actions-typing@4f8187271ae47514f7d7a43a09f4f0038a22542e # v2.0.0
