@@ -33,8 +33,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Start MongoDB
-      uses: step-security/mongodb-github-action@1.11.0
+      uses: step-security/mongodb-github-action@1.12.0
       with:
+        # Here we are using an image from Amazon's ECR rather than the default image from Docker Hub
+        mongodb-image: 'public.ecr.aws/docker/library/mongo'
         mongodb-version: ${{ matrix.mongodb-version }}
 
     - run: npm install
@@ -73,7 +75,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Start MongoDB
-      uses: step-security/mongodb-github-action@1.11.0
+      uses: step-security/mongodb-github-action@1.12.0
       with:
         mongodb-version: ${{ matrix.mongodb-version }}
         mongodb-replica-set: test-rs
@@ -117,7 +119,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Start MongoDB
-      uses: step-security/mongodb-github-action@1.11.0
+      uses: step-security/mongodb-github-action@1.12.0
       with:
         mongodb-version: ${{ matrix.mongodb-version }}
         mongodb-replica-set: test-rs
@@ -132,6 +134,18 @@ jobs:
         CI: true
 ```
 
+### Using a Custom Mongo Image
+You can utilize an alternative MongoDB docker image using the `mongodb-image` input:
+
+
+```yaml
+    - name: Start MongoDB
+      uses: step-security/mongodb-github-action@1.11.0
+      with:
+        # Here we are using an image from Amazon's ECR rather than the default image from Docker Hub
+        mongodb-image: 'public.ecr.aws/docker/library/mongo'
+        mongodb-version: ${{ matrix.mongodb-version }}
+```
 
 ### With Authentication (MongoDB `--auth` Flag)
 Setting the `mongodb-username` and `mongodb-password` inputs. As per the [Dockerhub documentation](https://hub.docker.com/_/mongo), this automatically creates an admin user and enables `--auth` mode.
@@ -161,7 +175,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Start MongoDB
-      uses: step-security/mongodb-github-action@1.11.0
+      uses: step-security/mongodb-github-action@1.12.0
       with:
         mongodb-version: ${{ matrix.mongodb-version }}
         mongodb-username: supercharge
@@ -205,7 +219,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Start MongoDB
-      uses: step-security/mongodb-github-action@1.11.0
+      uses: step-security/mongodb-github-action@1.12.0
       with:
         mongodb-version: ${{ matrix.mongodb-version }}
         mongodb-container-name: mongodb-${{ matrix.node-version }}-${{ matrix.mongodb-version }}
