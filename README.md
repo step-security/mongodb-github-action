@@ -33,7 +33,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Start MongoDB
-      uses: step-security/mongodb-github-action@1.12.0
+      uses: step-security/mongodb-github-action@v1
       with:
         mongodb-version: ${{ matrix.mongodb-version }}
 
@@ -73,7 +73,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Start MongoDB
-      uses: step-security/mongodb-github-action@1.12.0
+      uses: step-security/mongodb-github-action@v1
       with:
         mongodb-version: ${{ matrix.mongodb-version }}
         mongodb-replica-set: test-rs
@@ -117,7 +117,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Start MongoDB
-      uses: step-security/mongodb-github-action@1.12.0
+      uses: step-security/mongodb-github-action@v1
       with:
         mongodb-version: ${{ matrix.mongodb-version }}
         mongodb-replica-set: test-rs
@@ -161,7 +161,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Start MongoDB
-      uses: step-security/mongodb-github-action@1.12.0
+      uses: step-security/mongodb-github-action@v1
       with:
         mongodb-version: ${{ matrix.mongodb-version }}
         mongodb-username: supercharge
@@ -205,7 +205,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Start MongoDB
-      uses: step-security/mongodb-github-action@1.12.0
+      uses: step-security/mongodb-github-action@v1
       with:
         mongodb-version: ${{ matrix.mongodb-version }}
         mongodb-container-name: mongodb-${{ matrix.node-version }}-${{ matrix.mongodb-version }}
@@ -227,7 +227,7 @@ You can utilize an alternative MongoDB docker image using the `mongodb-image` in
 
 ```yaml
     - name: Start MongoDB
-      uses: step-security/mongodb-github-action@1.12.0
+      uses: step-security/mongodb-github-action@v1
       with:
         # Here we are using an image from Amazon's ECR rather than the default image from Docker Hub
         mongodb-image: 'public.ecr.aws/docker/library/mongo'
