@@ -48,7 +48,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/step-security/mongodb-github-action@sha256:07b75dd3727696912a6c91646db413517f238e4fe2bd87788d31b59b9f05ca80'
+  image: 'docker://ghcr.io/step-security/mongodb-github-action@sha256:a556cca53926b7c0ad2be7e250c73da4f16c1a96c7b8848597f34c1d36f6e73a' #v1.12.1
   args:
     - ${{ inputs.mongodb-image }}
     - ${{ inputs.mongodb-version }}
