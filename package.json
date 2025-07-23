@@ -9,7 +9,7 @@
     "@supercharge/eslint-config": "~3.0.1",
     "c8": "~9.1.0",
     "eslint": "~8.57.0",
-    "expect": "~29.7.0",
+    "expect": "~30.0.5",
     "mongoose": "^8.10.1",
     "uvu": "~0.5.6"
   },
