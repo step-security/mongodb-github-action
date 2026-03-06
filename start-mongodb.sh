@@ -11,7 +11,7 @@ MONGODB_PASSWORD=$7
 MONGODB_CONTAINER_NAME=$8
 
 # validate subscription status
-UPSTREAM="supercharge/mongodb-github-action"
+UPSTREAM="openfga/action-openfga-test"
 ACTION_REPO="${GITHUB_ACTION_REPOSITORY:-}"
 DOCS_URL="https://docs.stepsecurity.io/actions/stepsecurity-maintained-actions"
 
@@ -24,7 +24,7 @@ fi
 echo -e "\033[36mLearn more:\033[0m $DOCS_URL"
 echo ""
 
-if [ "$REPO_PRIVATE" = "true" ]; then
+if [ "$REPO_PRIVATE" != "false" ]; then
   SERVER_URL="${GITHUB_SERVER_URL:-https://github.com}"
 
   if [ "$SERVER_URL" != "https://github.com" ]; then
@@ -44,8 +44,8 @@ if [ "$REPO_PRIVATE" = "true" ]; then
   if [ $CURL_EXIT_CODE -ne 0 ]; then
     echo "Timeout or API not reachable. Continuing to next step."
   elif [ "$RESPONSE" = "403" ]; then
-    echo -e "\033[1;31mThis action requires a StepSecurity subscription for private repositories.\033[0m"
-    echo -e "\033[31mLearn how to enable a subscription: $DOCS_URL\033[0m"
+    echo -e "::error::\033[1;31mThis action requires a StepSecurity subscription for private repositories.\033[0m"
+    echo -e "::error::\033[31mLearn how to enable a subscription: $DOCS_URL\033[0m"
     exit 1
   fi
 fi
