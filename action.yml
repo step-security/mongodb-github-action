@@ -58,5 +58,3 @@ runs:
     - ${{ inputs.mongodb-username }}
     - ${{ inputs.mongodb-password }}
     - ${{ inputs.mongodb-container-name }}
-  env:
-    REPO_PRIVATE: ${{ github.event.repository.private }}
